@@ -5,6 +5,6 @@ if (combustivel == 0) then
 end
 ultimo_slot = turtle.getItemCount(16)
 if (ultimo_slot > 0) then
-    shell.run("disk/esvaziar.lua")
+    shell.run("esvaziar.lua")
 end
-shell.run("disk/break.lua")
+shell.run("break.lua")
