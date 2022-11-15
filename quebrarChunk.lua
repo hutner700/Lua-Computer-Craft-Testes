@@ -1,10 +1,10 @@
 lado = 1
 while true do
-    
+
     for i=1,8 do
 
-        for i=1,15 do
-            turtle.forward()
+        for a=1,15 do
+            shell.run('main.lua')
         end
 
         if (math.fmod(lado,2) == 1) then
@@ -17,8 +17,8 @@ while true do
             turtle.turnRight()
         end
 
-        for i=1,15 do
-            turtle.forward()
+        for b=1,15 do
+            shell.run('main.lua')
         end
 
         if (math.fmod(lado,2) == 1) then
@@ -26,11 +26,20 @@ while true do
                 turtle.turnRight()
                 turtle.forward()
                 turtle.turnRight()
+            else
+                turtle.turnLeft()
+                turtle.turnLeft()
             end
         else
-            turtle.turnLeft()
-            turtle.forward()
-            turtle.turnLeft()
+            if i < 8 then
+                turtle.turnLeft()
+                turtle.forward()
+                turtle.turnLeft()
+            else
+                turtle.turnLeft()
+                turtle.turnLeft()
+            end
+
         end
 
     turtle.digDown()
