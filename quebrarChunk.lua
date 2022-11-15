@@ -2,7 +2,7 @@ lado = 1
 while true do
 
     for i=1,8 do
-
+        
         for a=1,15 do
             shell.run('main.lua')
         end
@@ -41,7 +41,7 @@ while true do
             end
 
         end
-
+    end
     turtle.digDown()
     turtle.Down()
     turtle.digDown()
