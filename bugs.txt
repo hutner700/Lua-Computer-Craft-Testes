@@ -1,1 +1,3 @@
 -Na hr q ele faz a curva dentro do chunk, ele nao quebra o bloco de cima.
+-algumas veze flagrado na mesma linha que foi...?
+-Down com letra maiuscula
