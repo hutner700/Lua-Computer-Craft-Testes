@@ -1,7 +1,6 @@
 combustivel = turtle.getFuelLevel()
 if (combustivel == 0) then
-    turtle.select(1)
-    turtle.refuel(2)
+    shell.run("reabastecer.lua")
 end
 ultimo_slot = turtle.getItemCount(16)
 if (ultimo_slot > 0) then
