@@ -8,17 +8,13 @@ while true do
 
         if (math.fmod(lado,2) == 1) then
             turtle.turnLeft()
-            turtle.forward()
+            shell.run('main.lua')
             turtle.turnLeft()
-            turtle.digUp()
-            turtle.digDown()
             lado = lado + 1
         else
             turtle.turnRight()
-            turtle.forward()
+            shell.run('main.lua')
             turtle.turnRight()
-            turtle.digUp()
-            turtle.digDown()
             lado = lado + 1
         end
     
