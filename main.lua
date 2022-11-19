@@ -75,8 +75,8 @@ function quebrar_frente()
     while (not andou) do
         quebrou = turtle.dig()
         andou = turtle.forward()
-        if not quebrou then
-            error()
+        if (not quebrou and not andou)  then
+            error("Não consegui quebrar o bloco da frente")
         end
     end
 end
@@ -90,10 +90,7 @@ function work()
     if (quantidade_ultimo_slot > 0) then
         esvaziarInventario()
     end
-    andou = false
-    quebrou = nil
-    desvio = false
-    
+    quebrar_frente()
     turtle.digUp()
     turtle.digDown()
 end
@@ -101,7 +98,6 @@ end
 function virar( curva )
     if curva == 1 then
         turtle.turnLeft()
-        andou = turtle.forward()
         quebrar_frente()
         turtle.turnLeft()
         turtle.digUp()
@@ -109,7 +105,6 @@ function virar( curva )
         curva = 2
     elseif curva == 2 then
         turtle.turnRight()
-        andou = turtle.forward()
         quebrar_frente()
         turtle.turnRight()
         turtle.digUp()
@@ -126,12 +121,23 @@ function descer()
     end
 end
 
+curva = 1
 while true do 
+    print("Iniciando a query")
     for j=1,14 do
+        print("Iniciando a coluna "..tostring(j))
         for i=1,13 do
+            print("Iniciando o trabalho na linha "..tostring(i))
             work()
         end
-    curva = virar(curva)
+        texto = ""
+        if curva == 1 then
+            texto = "Esquerda"
+        else
+            texto = "Direita"
+        end
+        print("Fazendo a curva "..texto)
+        curva = virar(curva)
     end
     turtle.turnRight()
     for z=1,14 do
