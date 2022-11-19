@@ -137,7 +137,7 @@ while true do
         turtle.turnLeft()
         GPS.TurnLeft()
     end
-    if (GPS.orientation == 2 and GPS.x == eixox)
+    if (GPS.orientation == 2 and GPS.x == eixox) then
         turtle.turnRight()
         GPS.TurnRight()
         turtle.dig()
