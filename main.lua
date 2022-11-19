@@ -83,7 +83,7 @@ end
 
 function work()
     combustivel = turtle.getFuelLevel()
-    if (combustivel == 0) then
+    if (combustivel < 1000) then
         reabastecerCombustivel()
     end
     quantidade_ultimo_slot = turtle.getItemCount(16)
