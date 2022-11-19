@@ -1,5 +1,0 @@
-turtle.select(2)
-turtle.placeUp()
-turtle.suckUp(64)
-turtle.refuel(64)
-turtle.digUp()
