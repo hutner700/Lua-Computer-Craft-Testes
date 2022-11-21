@@ -92,30 +92,35 @@ function descer()
     end
 end
 
-curva = 1
-while true do 
-    print("Iniciando a query")
-    for j=1,14 do
-        print("Iniciando a coluna "..tostring(j))
-        for i=1,13 do
-            print("Iniciando o trabalho na linha "..tostring(i))
-            work()
+function main()
+    curva = 1
+    while true do 
+        print("Iniciando a query")
+        for j=1,14 do
+            print("Iniciando a coluna "..tostring(j))
+            for i=1,13 do
+                print("Iniciando o trabalho na linha "..tostring(i))
+                work()
+            end
+            texto = ""
+            if curva == 1 then
+                texto = "Esquerda"
+            else
+                texto = "Direita"
+            end
+            print("Fazendo a curva "..texto)
+            curva = virar(curva)
         end
-        texto = ""
-        if curva == 1 then
-            texto = "Esquerda"
-        else
-            texto = "Direita"
+        turtle.turnRight()
+        for z=1,14 do
+            turtle.forward()
         end
-        print("Fazendo a curva "..texto)
-        curva = virar(curva)
+        turtle.turnLeft() 
+        descer()
     end
-    turtle.turnRight()
-    for z=1,14 do
-        turtle.forward()
-    end
-    turtle.turnLeft() 
-    descer()
 end
 
+if not pcall(main)
+    esvaziarInventario()
+end
 
